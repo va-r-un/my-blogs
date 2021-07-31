@@ -15,6 +15,11 @@ export class ApiService {
     return throwError(error.error || "server error.");
   }
 
+  get(path:string): Observable<any> {
+    return this.http.get(`${environment.url}${path}`)
+      .pipe(catchError(this.handleError))
+  }
+
   post(path: string, body: Object = {}): Observable<any> {
     return this.http.post(
       `${environment.url}${path}`,

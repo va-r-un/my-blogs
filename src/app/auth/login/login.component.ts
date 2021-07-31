@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginForm.value).subscribe(
       data => {
         console.log(data);
-        // this.router.navigateByUrl('/home')
+        this.router.navigateByUrl('/home')
       },
       err => {
         for (let msg in err.errors) {
