@@ -1,0 +1,33 @@
+<div class="register-form-flex">
+    <mat-card>
+        <mat-card-title>
+            Register
+        </mat-card-title>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <mat-card-content>
+                <mat-form-field appearance="outline">
+                    <mat-label>Username</mat-label>
+                    <input matInput placeholder="Enter username" formControlName="username" type="text" required>
+                    <mat-icon matSuffix>account_circle</mat-icon>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Enter email" formControlName="email" type="email" required>
+                    <mat-icon matSuffix>email</mat-icon>
+                </mat-form-field>
+                <br />
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Enter password" formControlName="password" type="password" required>
+                    <mat-icon matSuffix>lock</mat-icon>
+                </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions>
+                <div class="button-flex-container">
+                    <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">Sign Up</button>
+                </div>
+            </mat-card-actions>
+        </form>
+    </mat-card>
+</div>
